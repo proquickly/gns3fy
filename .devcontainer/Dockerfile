@@ -20,6 +20,6 @@ USER circleci:circleci
 #     && rm -rf /var/lib/apt/lists/*
 
 COPY pyproject.toml .
-COPY poetry.lock .
+# COPY poetry.lock .
 
-RUN poetry install --no-interaction
+RUN poetry lock && poetry install --no-interaction
